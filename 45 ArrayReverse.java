@@ -16,16 +16,17 @@ class ArrayReverse {
             array[i] = Input.nextInt();
             i++;
         }
-        System.out.println(Arrays.toString(reverseArray(array, size)));
+        System.out.println(Arrays.toString(reverseArray(array)));
     }
-    public static int[] reverseArray(int[] array, int size){
-        int[] newArray = new int[size];
-        int i = 0 , j = 0;
-        while (i < array.length-1){
-            newArray[j] = array[i];
-            j++;
+    public static int[] reverseArray(int[] array){
+        int i = 0 , j = array.length - 1;
+        while (i < j){
+            int c = array[i];
+            array[i] = array[j];
+            array[j] = c;
+            i++;
+            j--;
         }
-        i++;
-        return newArray;
+        return array;
     }
 }
